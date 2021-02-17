@@ -6,6 +6,7 @@ using RabbitCoopSimulation.Service.Concrete;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace RabbitCoopSimulation.ConsoleApp
 {
@@ -41,6 +42,15 @@ namespace RabbitCoopSimulation.ConsoleApp
                 {
                     _coopSimulation.NextCycle();
                 }
+
+                int graveyardCount = _coopSimulation.Graveyard.Count;
+                int populationCount = _coopSimulation.Population.Count;
+                int femaleRabbitCount = _coopSimulation.Population.Where(x=> x is IFemaleFowl).ToList().Count;
+                int maleRabitCount = _coopSimulation.Population.Where(x=> x is IFemaleFowl).ToList().Count;
+                string time = _coopSimulation.Time.ToShortDateString();
+
+                Console.WriteLine("Zaman={0} - Popülasyon  = {1} -Erkek Tavşan Sayısı = {2} -Dişi Tavşan Sayısı = {3} - Ölü Tavşan Sayısı  = {4}", time, populationCount,femaleRabbitCount,maleRabitCount,graveyardCount);
+                Console.Read();
             }
         }
 
