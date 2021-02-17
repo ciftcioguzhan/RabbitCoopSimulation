@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RabbitCoopSimulation.Service;
-using System;
-using System.IO;
-using System.Collections.Generic;
-using RabbitCoopSimulation.Service.Concrete;
 using RabbitCoopSimulation.Service.Abstract;
+using RabbitCoopSimulation.Service.Concrete;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace RabbitCoopSimulation.ConsoleApp
 {
@@ -44,7 +44,6 @@ namespace RabbitCoopSimulation.ConsoleApp
                 }
             }
         }
-
 
         static void Main(string[] args)
         {

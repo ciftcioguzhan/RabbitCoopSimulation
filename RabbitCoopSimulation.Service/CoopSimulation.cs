@@ -1,27 +1,39 @@
 ﻿using RabbitCoopSimulation.Service.Abstract;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace RabbitCoopSimulation.Service
 {
     public class CoopSimulation : ICoopSimulation
     {
+        private Stopwatch _stopWatch;
+        private double _totalMatingTimeInMilliseconds;
+        private double _totalBirthTimeTimeInMilliseconds;
+        private double _totalDeathTimeTimeInMilliseconds;
+
+        public double AverageMatingTimeInMilliseconds { get { return _totalMatingTimeInMilliseconds / CycleCounter; } }
+        public double AverageBirthTimeInMilliseconds { get { return _totalBirthTimeTimeInMilliseconds / CycleCounter; } }
+        public double AverageDeathTimeInMilliseconds { get { return _totalDeathTimeTimeInMilliseconds / CycleCounter; } }
+        public double TotalSimulationTimeInSeconds { get { return (_totalMatingTimeInMilliseconds + _totalBirthTimeTimeInMilliseconds + _totalDeathTimeTimeInMilliseconds) / 1000; } }
+
         public HashSet<IFowl> Population { get; set; }
-        public DateTime Time { get; set; }
-        public Random Random { get; set; }
         public HashSet<IFowl> Graveyard { get; set; }
 
+        public DateTime Time { get; set; }
+        public Random Random { get; set; }
+        public int CycleCounter { get; set; }
+
         public event MatingNotify CouplingNotify;
-
         public event BirthNotify BirthNotify;
-
         public event DeathNotify DeathNotify;
 
         public CoopSimulation()
         {
             Random = new Random();
             Graveyard = new HashSet<IFowl>();
+            _stopWatch = new Stopwatch();
         }
 
         public void MatingTime()
@@ -97,12 +109,17 @@ namespace RabbitCoopSimulation.Service
 
             foreach (var item in fowl)
             {
-                List<IFowl> fowlList = item.Birth();
-
-                fowlList.ForEach(x =>
-                    Population.Add(x)
-                );
+                BirthOperation(item);
             }
+        }
+
+        private void BirthOperation(IFemaleFowl item)
+        {
+            List<IFowl> fowlList = item.Birth();
+
+            fowlList.ForEach(x =>
+               AddNewFowl(x)
+            );
         }
 
         public void DeathTime()
@@ -114,19 +131,50 @@ namespace RabbitCoopSimulation.Service
 
             foreach (var item in fowl)
             {
-                item.Death();
-                Population.Remove(item);
-                Graveyard.Add(item);
+                DeathOperation(item);
             }
+        }
+
+        private void DeathOperation(IFowl item)
+        {
+            item.Death();
+            RemoveFowl(item);
+        }
+
+        private void AddNewFowl(IFowl item)
+        {
+            Population.Add(item);
+        }
+
+        private void RemoveFowl(IFowl item)
+        {
+            Population.Remove(item);
+            Graveyard.Add(item);
         }
 
         public void NextCycle()
         {
+            _stopWatch.Restart();
             MatingTime();
+            _stopWatch.Stop();
+
+            _totalMatingTimeInMilliseconds += _stopWatch.ElapsedMilliseconds;
+
+            _stopWatch.Restart();
             BirthTime();
+            _stopWatch.Stop();
+
+            _totalBirthTimeTimeInMilliseconds += _stopWatch.ElapsedMilliseconds;
+
+            _stopWatch.Restart();
             DeathTime();
+            _stopWatch.Stop();
+
+            _totalDeathTimeTimeInMilliseconds += _stopWatch.ElapsedMilliseconds;
 
             Time = Time.AddDays(1);
+
+            CycleCounter++;
         }
 
     }
