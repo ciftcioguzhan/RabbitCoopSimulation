@@ -12,7 +12,6 @@ namespace RabbitCoopSimulation.Service
         private double _totalMatingTimeInMilliseconds;
         private double _totalBirthTimeTimeInMilliseconds;
         private double _totalDeathTimeTimeInMilliseconds;
-
         public double AverageMatingTimeInMilliseconds { get { return _totalMatingTimeInMilliseconds / CycleCounter; } }
         public double AverageBirthTimeInMilliseconds { get { return _totalBirthTimeTimeInMilliseconds / CycleCounter; } }
         public double AverageDeathTimeInMilliseconds { get { return _totalDeathTimeTimeInMilliseconds / CycleCounter; } }

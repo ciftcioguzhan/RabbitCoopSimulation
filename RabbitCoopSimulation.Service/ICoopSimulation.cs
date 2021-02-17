@@ -37,7 +37,7 @@ namespace RabbitCoopSimulation.Service
         /// </summary>
         public void MatingTime();
         /// <summary>
-        /// Doğum
+        /// Doğum 
         /// </summary>
         public void BirthTime();
         /// <summary>
