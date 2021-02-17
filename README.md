@@ -33,7 +33,7 @@ Kümes hayvanı doğum yaptığında çocukların kız olma olasılığı  **Di�
             { 10, 0.03M },
             { 11, 0.02M },
             { 12, 0.01M },
-        }; !
+        }; 
 ```
 4 ile 12 yaş arası farklı dağılımlara bağlı olarak çocuk sayısı değişir.Olasılıklar şu şekildedir ; <br>
 
