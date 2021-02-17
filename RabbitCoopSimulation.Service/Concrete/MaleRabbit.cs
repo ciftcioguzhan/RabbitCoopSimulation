@@ -1,5 +1,5 @@
-﻿using RabbitCoopSimulation.Domain.Model;
-using RabbitCoopSimulation.Service.Abstract;
+﻿using RabbitCoopSimulation.Service.Abstract;
+using RabbitCoopSimulation.Service.Model;
 using System.Collections.Generic;
 
 namespace RabbitCoopSimulation.Service.Concrete

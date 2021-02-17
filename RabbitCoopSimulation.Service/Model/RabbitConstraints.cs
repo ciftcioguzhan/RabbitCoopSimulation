@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RabbitCoopSimulation.Domain.Model
+namespace RabbitCoopSimulation.Service.Model
 {
     public static class RabbitConstraints
     {
@@ -11,7 +11,7 @@ namespace RabbitCoopSimulation.Domain.Model
         /// <summary>
         /// Ergenliğe Erişim Süresi
         /// </summary>
-        public const int PubescencePeriodInDays = 510; 
+        public const int PubescencePeriodInDays = 400; 
         /// <summary>
         /// Gebelik Süreci
         /// </summary>

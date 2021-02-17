@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitCoopSimulation.Domain", "RabbitCoopSimulation.Domain\RabbitCoopSimulation.Domain.csproj", "{EF3E3D23-A05D-4C09-B088-1F8610E0D09D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitCoopSimulation.Service", "RabbitCoopSimulation.Service\RabbitCoopSimulation.Service.csproj", "{626873BD-7BAB-4AD5-833F-86AD9F916AAA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitCoopSimulation.ConsoleApp", "RabbitCoopSimulation.Console.APP\RabbitCoopSimulation.ConsoleApp.csproj", "{F007AC49-27C2-4113-8967-DF01E0D9E496}"
@@ -20,10 +18,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EF3E3D23-A05D-4C09-B088-1F8610E0D09D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF3E3D23-A05D-4C09-B088-1F8610E0D09D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF3E3D23-A05D-4C09-B088-1F8610E0D09D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF3E3D23-A05D-4C09-B088-1F8610E0D09D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{626873BD-7BAB-4AD5-833F-86AD9F916AAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{626873BD-7BAB-4AD5-833F-86AD9F916AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{626873BD-7BAB-4AD5-833F-86AD9F916AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU

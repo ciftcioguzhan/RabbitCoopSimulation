@@ -9,7 +9,7 @@
 Çiftleşek olan hayvanlar bir olay(event) fırlatarak haberleşir.
 Dişiler için Çiftleşme; Kümes hayvanı ergenliğe erişmişse ve gebe değilse çiftleşebilir.
 Erkekler için Çiftleşme; Kümes hayvanı ergenliğe ulaşmışsa çiftleşebilir.
-Ergenliği erişim süresi 510 Gün  olarak  olarak belirlenmiştir.
+Ergenliği erişim süresi 400 Gün  olarak  olarak belirlenmiştir.
 Kümes hayvanının çiftleşme olayına katılıp katılmayacağı **Çiftleşme Katılım Oranı(0.25)** üzerinden belirlenmektedir.
 
 ## *Gebe Kalma*
