@@ -20,8 +20,9 @@ Eğer gebe ise tekrar çiftleşmeye giremez.
 Doğum yapacak olan hayvanlar bir olay(event) fırlatarak haberleşir.
 Gebelik süreci tamamlandıktan sonra doğum işlemi gerçekleşir.
 Kümes hayvanı doğum yaptığında çocukların kız olma olasılığı  **Dişi Doğum Oranı(0.50)**  üzerinden belirlenmektedir.
-4 ile 12 yaş arası farklı dağılımlara bağlı olarak çocuk sayısı değişir.Olasılıklar şu şekildedir ; <br>
-`      public static Dictionary<int, decimal> NumberOfChildren = new Dictionary<int, decimal>
+
+```csharp
+  public static Dictionary<int, decimal> NumberOfChildren = new Dictionary<int, decimal>
         {
             { 4, 0.35M },
             { 5, 0.24M },
@@ -32,14 +33,17 @@ Kümes hayvanı doğum yaptığında çocukların kız olma olasılığı  **Di�
             { 10, 0.03M },
             { 11, 0.02M },
             { 12, 0.01M },
-        };`
+        }; !
+```
+4 ile 12 yaş arası farklı dağılımlara bağlı olarak çocuk sayısı değişir.Olasılıklar şu şekildedir ; <br>
 
 ## *Ölüm*
 Ölümü gerçekleşecek olan hayvanlar bir olay(event) fırlatarak haberleşir.
 Tavşan dokuz yaşını geçtiğinde ölüm gerçekleşmiş oluyor.
 Tavşan dokuz yaşının altında ise  farklı dağılımlara bağlı olarak ölüm işlemi gerçekleşir. Olasılıklar şu şekildedir ; <br>
 
-`    public static Dictionary<int, decimal> DeathRate = new Dictionary<int, decimal>
+```csharp
+public static Dictionary<int, decimal> DeathRate = new Dictionary<int, decimal>
         {
             { 0, 0.03M / 365},
             { 1, 0.02M / 365},
@@ -51,6 +55,7 @@ Tavşan dokuz yaşının altında ise  farklı dağılımlara bağlı olarak öl
             { 7, 0.16M / 365},
             { 8, 0.20M / 365},
             { 9, 0.26M / 365},
-        };`
+        }; 
+```
 
 
