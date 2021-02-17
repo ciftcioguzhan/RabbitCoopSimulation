@@ -36,6 +36,5 @@ namespace RabbitCoopSimulation.Service.Abstract
         /// Yaş
         /// </summary>
         int Age { get; }
-
     }
 }
