@@ -19,7 +19,6 @@ namespace RabbitCoopSimulation.ConsoleApp
             public DateTime EndDate { get; set; }
             public ConsoleApplication(ICoopSimulation coopSimulation)
             {
-
                 IConfiguration config = new ConfigurationBuilder().SetBasePath(Path.Combine(AppContext.BaseDirectory))
                .AddJsonFile("appsettings.json", true, true)
                .Build();
